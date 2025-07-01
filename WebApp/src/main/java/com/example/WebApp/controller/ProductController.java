@@ -16,14 +16,17 @@ public class ProductController {
     public List<Product> getProducts(){
         return service.getProducts();
     }
+
     @GetMapping("/products/{id}")
     public Product getProdByID(@PathVariable int id){
         return service.getProdByID(id);
     }
+
     @PostMapping("/products")
     public void addProduct(@RequestBody Product prod){
         service.addProduct(prod);
     }
+
 
     @PutMapping("/products")
     public void updateProduct(@RequestBody Product prod){
@@ -34,5 +37,4 @@ public class ProductController {
     public void deleteProduct(@PathVariable int prodID){
         service.deleteProduct(prodID);
     }
-
 }
